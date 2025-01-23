@@ -1,12 +1,12 @@
 # spray-station
 Home Spray Wall Climbing App
 
-Initial thoughts on database structure: 
-Wall
+## Database structure: 
+**Wall
 - Id (int)
 - Name (varchar)
 
-Climb
+**Climb
 - Id (int)
 - WallId (int)
 - PictureId (int)
@@ -15,20 +15,20 @@ Climb
 - SetDate (datetime)
 - LastEditedDate (datetime)
 
-Tag
+**Tag
 - Id (int)
 - Name (varchar)
 
-ClimbTag
+**ClimbTag
 - ClimbId (int)
 - TagId (int)
 
-Climber
+**Climber
 - Id (int)
 - Name (varchar)
 - PictureId (int)
 
-Tick
+**Tick
 - Id (int)
 - ClimbId (int)
 - ClimberId (int)
@@ -36,26 +36,26 @@ Tick
 - Note (varchar)
 - Repeat (bool)
 
-Grade (only allowed to vote once ticked)
+**Grade
 - ClimbId (int)
 - ClimberId (int)
 - ProposedGrade (int)
 
-Picture
+**Picture
 - Id
 - Url
 
-Hold
+**Hold
 - ClimbId (varchar)
 - Coordinates (or something like that)
 - Radius?
 
 ## Relationships
-One to one:
+**One to one:
 - Climber to Picture
 - Climber to Grade to Climb
 
-One to many: 
+**One to many: 
 - Wall to Climb
 - Climb to Hold
 - Climb to Grade
@@ -63,5 +63,5 @@ One to many:
 - Climber to Tick
 - Picture to Climb
 
-Many to many: 
+**Many to many: 
 - Tag to Climb
