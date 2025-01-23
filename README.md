@@ -2,11 +2,11 @@
 Home Spray Wall Climbing App
 
 ## Database structure: 
-**Wall
+**Wall**
 - Id (int)
 - Name (varchar)
 
-**Climb
+**Climb**
 - Id (int)
 - WallId (int)
 - PictureId (int)
@@ -15,20 +15,20 @@ Home Spray Wall Climbing App
 - SetDate (datetime)
 - LastEditedDate (datetime)
 
-**Tag
+**Tag**
 - Id (int)
 - Name (varchar)
 
-**ClimbTag
+**ClimbTag**
 - ClimbId (int)
 - TagId (int)
 
-**Climber
+**Climber**
 - Id (int)
 - Name (varchar)
 - PictureId (int)
 
-**Tick
+**Tick**
 - Id (int)
 - ClimbId (int)
 - ClimberId (int)
@@ -36,26 +36,26 @@ Home Spray Wall Climbing App
 - Note (varchar)
 - Repeat (bool)
 
-**Grade
+**Grade**
 - ClimbId (int)
 - ClimberId (int)
 - ProposedGrade (int)
 
-**Picture
+**Picture**
 - Id
 - Url
 
-**Hold
+**Hold**
 - ClimbId (varchar)
 - Coordinates (or something like that)
 - Radius?
 
 ## Relationships
-**One to one:
+**One to one:**
 - Climber to Picture
 - Climber to Grade to Climb
 
-**One to many: 
+**One to many:**
 - Wall to Climb
 - Climb to Hold
 - Climb to Grade
@@ -63,5 +63,5 @@ Home Spray Wall Climbing App
 - Climber to Tick
 - Picture to Climb
 
-**Many to many: 
+**Many to many:**
 - Tag to Climb
