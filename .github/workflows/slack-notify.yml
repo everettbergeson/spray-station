@@ -11,14 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       (
-        # Condition for regular PR comments (issue_comment trigger)
         github.event_name == 'issue_comment' &&
         github.event.issue.pull_request &&
         github.event.issue.user.login == 'everettbergeson'
-        # Note: Checking if you are a reviewer here is complex without an API call
       ) ||
       (
-        # Condition for review comments (pull_request_review_comment trigger)
         github.event_name == 'pull_request_review_comment' && (
           github.event.pull_request.user.login == 'your-github-username' ||
           contains(github.event.pull_request.requested_reviewers.*.login, 'your-github-username')
@@ -26,7 +23,7 @@ jobs:
       )
     steps:
       - name: Send to Slack
-        uses: slackapi/slack-github-action@v1.24.0 # Or latest version
+        uses: slackapi/slack-github-action@v1.24.0
         with:
           payload: |
             {
