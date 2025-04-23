@@ -9,14 +9,12 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
-    # IMPORTANT: Replace 'your-github-username' with your actual GitHub username below
-    # This condition now DOES NOT exclude comments made by 'your-github-username'
     if: |
       (
         # Condition for regular PR comments (issue_comment trigger)
         github.event_name == 'issue_comment' &&
         github.event.issue.pull_request &&
-        github.event.issue.user.login == 'your-github-username'
+        github.event.issue.user.login == 'everettbergeson'
         # Note: Checking if you are a reviewer here is complex without an API call
       ) ||
       (
